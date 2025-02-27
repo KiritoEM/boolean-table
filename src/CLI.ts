@@ -23,7 +23,7 @@ expression <expression>   Print the boolean table for the given expression
 help                      Display this help screen
 
 Expressions:
-a-z or A-Z:               variables 
+a-z or A-Z:               Variables 
 &                         and 
 ~                         not 
 |                         or `);

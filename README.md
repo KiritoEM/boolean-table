@@ -15,13 +15,17 @@ bun install
 
 ## Usage
 
-### Format du fichier JSON :
-
 Pour lancer l'outil: 
 
 ```bash
 boolean-table
 ```
+### Expressions :
+- **a-z ou A-Z** : Variables 
+- **&** : AND
+- **~** : NOT
+- **|** : OR
+
 
 ### Commandes :
 - **expression `<expression>`** : Pour générer la table de vérité
