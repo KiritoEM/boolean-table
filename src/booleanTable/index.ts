@@ -9,7 +9,7 @@ class BooleanTable implements IBooleanTable {
     }
 
     run() {
-        return this.tokenizer.tokenizeInput("!a & (!b) | c ^ d");
+        return this.tokenizer.tokenizeInput("(a | b) & ~c");
     }
 }
 
