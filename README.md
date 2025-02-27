@@ -33,7 +33,7 @@ boolean-table
 ```bash
  boolean-table expression "a & (b | c)"
 
- # Table de vérité pour `a & (b   c)`
+ # Table de vérité pour a & (b   c)
  | a   | b   | c   | a & (b | c) |
  |-----|-----|-----|-------------|
  | 0   | 0   | 0   | 0           |
