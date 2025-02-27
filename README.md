@@ -20,7 +20,7 @@ Pour lancer l'outil:
 ```bash
 boolean-table
 ```
-### Expressions :
+### Expressions supportés:
 - **a-z ou A-Z** : Variables 
 - **&** : AND
 - **~** : NOT
