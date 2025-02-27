@@ -20,7 +20,13 @@ const displayHelp = () => {
 
 Commands:
 expression <expression>   Print the boolean table for the given expression
-help                      Display this help screen`);
+help                      Display this help screen
+
+Expressions:
+a-z or A-Z:               variables 
+&                         and 
+~                         not 
+|                         or `);
 };
 
 
