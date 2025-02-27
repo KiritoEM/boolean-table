@@ -24,7 +24,7 @@ boolean-table
 ```
 
 ### Commandes :
-- **expression <expression>** : Pour générer la table de vérité
+- **expression `<expression>`** : Pour générer la table de vérité
 - **help** : Pour afficher l'écran d'aide
 
 
