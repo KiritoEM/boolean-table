@@ -1,10 +1,10 @@
-import type Tokenizer from "./tokenizer";
+import type { ILexer } from "../lexer/types";
 import type { IBooleanTable } from "./types";
 
 class BooleanTable implements IBooleanTable {
-    public tokenizer: Tokenizer;
+    public tokenizer: ILexer;
 
-    constructor(tokenizer: Tokenizer) {
+    constructor(tokenizer: ILexer) {
         this.tokenizer = tokenizer;
     }
 
