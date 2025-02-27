@@ -1,15 +1,33 @@
-import type { ILexer } from "../lexer/types";
 import type { IBooleanTable } from "./types";
+import Tokenizer from "../lexer/index";
+import Parser from "../parser";
+import Proposition from "../proposition";
 
 class BooleanTable implements IBooleanTable {
-    public tokenizer: ILexer;
+    private tokenizer = new Tokenizer();
+    private input: string;
 
-    constructor(tokenizer: ILexer) {
-        this.tokenizer = tokenizer;
+    constructor(input: string) {
+        this.input = input;
     }
 
-    run() {
-        return this.tokenizer.tokenizeInput("(a | b) & ~c");
+    generateTable() {
+        const tokens = this.tokenizer.tokenizeInput(this.input);
+
+        const parser = new Parser(tokens);
+        const ast = parser.parseToAST();
+
+        const proposition = new Proposition(ast);
+        const propositionsList = proposition.listPropositions();
+
+        if (propositionsList.length === 0) {
+            console.log("Provide a valid propositional expression !!!");
+            return;
+        }
+    }
+
+    displayTable() {
+
     }
 }
 

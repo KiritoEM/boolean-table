@@ -46,10 +46,10 @@ class Parser {
             return { type: 'NOT', operand: operand };
         }
 
-        return this.parseGroupExpression();
+        return this.parseFactor();
     }
 
-    private parseGroupExpression(): TreeNode {
+    private parseFactor(): TreeNode {
         const token = this.getCurrentToken();
 
         if (!token) {

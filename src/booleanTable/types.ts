@@ -1,1 +1,4 @@
-export interface IBooleanTable { }
+export interface IBooleanTable {
+    generateTable(): void;
+    displayTable(): void;
+}
