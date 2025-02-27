@@ -2,6 +2,9 @@
   "name": "boolean-table",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "boolean-table": "link:boolean-table"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/chalk": "^2.2.4",

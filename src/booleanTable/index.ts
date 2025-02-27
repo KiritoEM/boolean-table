@@ -37,6 +37,7 @@ class BooleanTable implements IBooleanTable {
     fillTable(ast: TreeNode, propositions: string[]): { Ntable: { [key: string]: BinaryType[] }, Npropositions: string[] } {
         const propositionsLength = propositions.length;
         const rows = Math.pow(2, propositionsLength);
+
         let table: { [key: string]: BinaryType[] } = {};
 
         table[this.input] = [];
@@ -78,7 +79,7 @@ class BooleanTable implements IBooleanTable {
         console.log(header);
         console.log("-".repeat(header.length));
 
-        for (let i = 0; i < propositions.length; i++) {
+        for (let i = 0; i < table[propositions[0]].length; i++) {
             let row = [];
             for (let j = 0; j < propositions.length; j++) {
                 row.push(table[propositions[j]][i]);
