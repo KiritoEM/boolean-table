@@ -3,9 +3,18 @@
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/chalk": "^2.2.4",
+    "@types/figlet": "^1.7.0",
+    "@types/gradient-string": "^1.1.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "figlet": "^1.8.0",
+    "gradient": "^0.2.0",
+    "gradient-string": "^3.0.0"
   }
 }

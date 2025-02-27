@@ -1,5 +1,7 @@
+import { generateColoredAsciiArt } from "./src/asciiArt";
 import BooleanTable from "./src/booleanTable";
-import Parser from "./src/parser";
+
+generateColoredAsciiArt("BOOLEAN-TABLE", "A simple Boolean Table Generator");
 
 const booleanTable = new BooleanTable("(a | b) & ~c");
 

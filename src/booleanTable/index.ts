@@ -4,6 +4,7 @@ import Parser from "../parser";
 import Proposition from "../proposition";
 import type { TreeNode } from "../parser/types";
 import Evaluate from "../evaluate";
+import chalk from "chalk";
 
 class BooleanTable implements IBooleanTable {
     private tokenizer = new Tokenizer();
@@ -66,11 +67,14 @@ class BooleanTable implements IBooleanTable {
     }
 
     printTable(table: { [key: string]: BinaryType[] }, propositions: string[]): void {
+        console.log()
+        console.log(`Table boolean for : ${chalk.green(`"${this.input}"`)}`);
+        console.log()
+
         //print table
         propositions.push(`${this.input}`);
         let header = propositions.join('   |   ');
 
-        console.log("\n");
         console.log(header);
         console.log("-".repeat(header.length));
 
