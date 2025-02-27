@@ -28,11 +28,12 @@ class BooleanTable implements IBooleanTable {
             return;
         }
 
-        this.printTable(ast, propositionsList);
+        const { Ntable, Npropositions } = this.fillTable(ast, propositionsList);
+        this.printTable(Ntable, Npropositions);
     }
 
 
-    printTable(ast: TreeNode, propositions: string[]) {
+    fillTable(ast: TreeNode, propositions: string[]): { Ntable: { [key: string]: BinaryType[] }, Npropositions: string[] } {
         const propositionsLength = propositions.length;
         const rows = Math.pow(2, propositionsLength);
         let table: { [key: string]: BinaryType[] } = {};
@@ -60,6 +61,11 @@ class BooleanTable implements IBooleanTable {
             table[this.input].push(result);
         }
 
+        return { Ntable: table, Npropositions: propositions };
+
+    }
+
+    printTable(table: { [key: string]: BinaryType[] }, propositions: string[]): void {
         //print table
         propositions.push(`${this.input}`);
         let header = propositions.join('   |   ');
@@ -76,7 +82,6 @@ class BooleanTable implements IBooleanTable {
 
             console.log(row.join('   |   '));
         };
-
     }
 }
 
