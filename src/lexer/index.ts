@@ -27,6 +27,12 @@ class Lexer implements ILexer {
                 case "!":
                     tokens.push(this.createToken(TokenTypes.NOT_OPERATOR, char));
                     break;
+                case "->":
+                    tokens.push(this.createToken(TokenTypes.IMPLIES_OPERATOR, char));
+                    break;
+                case "->":
+                    tokens.push(this.createToken(TokenTypes.EQUAL_OPERATOR, char));
+                    break;
                 default:
                     break;
             }

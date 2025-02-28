@@ -6,3 +6,5 @@ export interface IBooleanTable {
 }
 
 export type BinaryType = "1" | "0";
+
+export type hashTableRecord<T extends string | number | symbol> = Record<T, BinaryType[]>;

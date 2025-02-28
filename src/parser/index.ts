@@ -10,7 +10,30 @@ class Parser {
     }
 
     parseToAST(): TreeNode {
+        let node = this.parseEqual();
+
+        return node;
+    }
+
+    private parseEqual(): TreeNode {
+        let node = this.parseImplicies();
+
+        while (this.getCurrentToken()?.type === TokenTypes.EQUAL_OPERATOR) {
+            this.incrementToken();
+            const right = this.parseImplicies();
+            node = { type: 'OR', left: node, right: right };
+        }
+
+        return node;
+    }
+    private parseImplicies(): TreeNode {
         let node = this.parseOr();
+
+        while (this.getCurrentToken()?.type === TokenTypes.IMPLIES_OPERATOR) {
+            this.incrementToken();
+            const right = this.parseOr();
+            node = { type: 'OR', left: node, right: right };
+        }
 
         return node;
     }

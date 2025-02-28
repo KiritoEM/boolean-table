@@ -1,10 +1,11 @@
-import type { IBooleanTable, BinaryType } from "./types";
+import type { IBooleanTable, BinaryType, hashTableRecord } from "./types";
 import Tokenizer from "../lexer/index";
 import Parser from "../parser";
 import Proposition from "../proposition";
 import type { TreeNode } from "../parser/types";
 import Evaluate from "../evaluate";
 import chalk from "chalk";
+import { numberToBinary } from "../utils";
 
 class BooleanTable implements IBooleanTable {
     private tokenizer = new Tokenizer();
@@ -34,21 +35,23 @@ class BooleanTable implements IBooleanTable {
     }
 
 
-    fillTable(ast: TreeNode, propositions: string[]): { Ntable: { [key: string]: BinaryType[] }, Npropositions: string[] } {
+    fillTable(ast: TreeNode, propositions: string[]): { Ntable: hashTableRecord<string>, Npropositions: string[] } {
         const propositionsLength = propositions.length;
         const rows = Math.pow(2, propositionsLength);
 
-        let table: { [key: string]: BinaryType[] } = {};
+        let table: hashTableRecord<string> = {};
 
         table[this.input] = [];
 
         for (let i = 0; i < propositionsLength; i++) {
+            if (table[propositions[i]]) continue;
+
             table[propositions[i]] = [];
         }
 
         //all input combinaisons
         for (let i = 0; i < rows; i++) {
-            let binary = i.toString(2).padStart(propositionsLength, "0");
+            let binary = numberToBinary(i, propositionsLength);
 
             for (let j = 0; j < propositionsLength; j++) {
                 if (propositions[j] === undefined) {
@@ -68,7 +71,7 @@ class BooleanTable implements IBooleanTable {
 
     }
 
-    printTable(table: { [key: string]: BinaryType[] }, propositions: string[]): void {
+    printTable(table: hashTableRecord<string>, propositions: string[]): void {
         console.log()
         console.log(`Table boolean for : ${chalk.green(`"${this.input}"`)}`);
         console.log()
