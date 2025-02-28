@@ -70,8 +70,6 @@ class Lexer implements ILexer {
             i++;
         }
 
-        console.log(str);
-
         return str;
 
     }

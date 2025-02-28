@@ -37,19 +37,15 @@ boolean-table
 ## Exemple d'utilisation
 
 ```bash
- boolean-table expression "a & (b | c)"
+ boolean-table expression "(a -> ~b) == (b | a)"
 
- # Table de vérité pour a & (b   c)
- | a   | b   | c   | a & (b | c) |
- |-----|-----|-----|-------------|
- | 0   | 0   | 0   | 0           |
- | 0   | 0   | 1   | 0           |
- | 0   | 1   | 0   | 0           |
- | 0   | 1   | 1   | 0           |
- | 1   | 0   | 0   | 0           |
- | 1   | 0   | 1   | 1           |
- | 1   | 1   | 0   | 1           |
- | 1   | 1   | 1   | 1           |
+ # Table de vérité pour (a -> ~b) == (b | a)
+| a | b | (a -> ~b) == (b | a) |
+|---|---|----------------------|
+| 0 | 0 | 0                    |
+| 0 | 1 | 1                    |
+| 1 | 0 | 1                    |
+| 1 | 1 | 0                    |
 ```
 
 
