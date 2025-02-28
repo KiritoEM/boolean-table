@@ -25,6 +25,8 @@ boolean-table
 - **&** : AND
 - **~** : NOT
 - **|** : OR
+- **==** : EQUAL
+- **->** : IMPLICIES
 
 
 ### Commandes :

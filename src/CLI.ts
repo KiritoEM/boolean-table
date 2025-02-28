@@ -26,7 +26,10 @@ Expressions:
 a-z or A-Z:               Variables 
 &                         and 
 ~                         not 
-|                         or `);
+|                         or 
+->                        implies
+==                        equal`);
+
 };
 
 
