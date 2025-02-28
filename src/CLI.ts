@@ -25,7 +25,7 @@ help                      Display this help screen
 Expressions:
 a-z or A-Z:               Variables 
 &                         and 
-~                         not 
+!                         not 
 |                         or `);
 };
 
