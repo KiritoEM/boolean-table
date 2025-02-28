@@ -1,4 +1,4 @@
-import type { TreeNode } from "../parser/types";
+import type { TreeNode } from "./parser/types";
 
 class Proposition {
     private ast: TreeNode;
