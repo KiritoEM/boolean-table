@@ -44,7 +44,7 @@ class BooleanTable implements IBooleanTable {
         table[this.input] = [];
 
         for (let i = 0; i < propositionsLength; i++) {
-            if (table[propositions[i]]) continue;
+            if (table[propositions[i]] !== undefined) continue;
 
             table[propositions[i]] = [];
         }

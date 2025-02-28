@@ -6,4 +6,4 @@ export type TreeNode<T = string> = {
     operand?: TreeNode<T>;
 }
 
-export type NodeType = "PROP" | "NOT" | "AND" | "OR";
+export type NodeType = "PROP" | "NOT" | "AND" | "OR" | "EQUAL" | "IMPLIES" | "XOR";

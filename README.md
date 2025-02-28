@@ -23,7 +23,7 @@ boolean-table
 ### Expressions supportés:
 - **a-z ou A-Z** : Variables 
 - **&** : AND
-- **!** : NOT
+- **~** : NOT
 - **|** : OR
 
 

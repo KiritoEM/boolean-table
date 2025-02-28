@@ -1,6 +1,6 @@
 export const WHITESPACES = /^\s*$/;
 export const NON_SYMBOL = /[a-zA-Z]\w*/;
-export const WORD = /\b/;
+export const WORD = /(==|->|[a-zA-Z]\w*|[()|&~])/g; // "==" or "->" or "a-z" or "() or "&" or "!"
 export const SPACES = /\s/g;
 
 export const numberToBinary = (n: number, argsLen: number): string => {

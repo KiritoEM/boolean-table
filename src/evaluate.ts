@@ -27,6 +27,25 @@ class Evaluate {
             return value === "1" ? "0" : "1";
         }
 
+
+        if (node.type === "IMPLIES" && node.left && node.right) {
+            const left = this.evaluateExpression(node.left, table, index);
+            const right = this.evaluateExpression(node.right, table, index);
+
+            if (left === "1" && right === "0") {
+                return "0";
+            } else {
+                return "1";
+            }
+        }
+
+        if (node.type === "EQUAL" && node.left && node.right) {
+            const left = this.evaluateExpression(node.left, table, index);
+            const right = this.evaluateExpression(node.right, table, index);
+
+            return left === right ? "1" : "0";
+        }
+
         return "0";
     }
 }

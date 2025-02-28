@@ -12,8 +12,8 @@ export type TokenObj = {
 export enum TokenTypes {
     OR_OPERATOR = "OR",
     AND_OPERATOR = "AND",
-    EQUAL_OPERATOR = "AND",
-    IMPLIES_OPERATOR = "AND",
+    EQUAL_OPERATOR = "EQUAL",
+    IMPLIES_OPERATOR = "IMPLIES",
     NOT_OPERATOR = "NOT",
     XOR_OPERATOR = "XOR",
     PROPOSITION = "PROPOSITION",

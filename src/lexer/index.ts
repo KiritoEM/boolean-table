@@ -24,13 +24,13 @@ class Lexer implements ILexer {
                 case "&":
                     tokens.push(this.createToken(TokenTypes.AND_OPERATOR, char));
                     break;
-                case "!":
+                case "~":
                     tokens.push(this.createToken(TokenTypes.NOT_OPERATOR, char));
                     break;
                 case "->":
                     tokens.push(this.createToken(TokenTypes.IMPLIES_OPERATOR, char));
                     break;
-                case "->":
+                case "==":
                     tokens.push(this.createToken(TokenTypes.EQUAL_OPERATOR, char));
                     break;
                 default:
@@ -69,6 +69,8 @@ class Lexer implements ILexer {
 
             i++;
         }
+
+        console.log(str);
 
         return str;
 

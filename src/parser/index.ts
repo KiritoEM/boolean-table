@@ -21,7 +21,7 @@ class Parser {
         while (this.getCurrentToken()?.type === TokenTypes.EQUAL_OPERATOR) {
             this.incrementToken();
             const right = this.parseImplicies();
-            node = { type: 'OR', left: node, right: right };
+            node = { type: 'EQUAL', left: node, right: right };
         }
 
         return node;
@@ -32,7 +32,7 @@ class Parser {
         while (this.getCurrentToken()?.type === TokenTypes.IMPLIES_OPERATOR) {
             this.incrementToken();
             const right = this.parseOr();
-            node = { type: 'OR', left: node, right: right };
+            node = { type: 'IMPLIES', left: node, right: right };
         }
 
         return node;
@@ -81,7 +81,7 @@ class Parser {
 
         if (token.type === TokenTypes.LEFT_PARENTHESE) {
             this.incrementToken();
-            const node = this.parseToAST();
+            const node = this.parseEqual();
 
             if (this.getCurrentToken()?.type !== TokenTypes.RIGHT_PARENTHESE) {
                 throw new Error("No closing parenthesis !!!");
