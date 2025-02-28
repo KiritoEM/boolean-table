@@ -60,6 +60,7 @@ class BooleanTable implements IBooleanTable {
             }
 
             const result = this.evaluateAST.evaluateExpression(ast, table, i);
+
             table[this.input].push(result);
         }
 
