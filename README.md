@@ -8,7 +8,7 @@ First, install [Bun](https://bun.sh/) and then run:
 
 With npm:
 ```bash
-npm i -g boolean-table
+npm i -g simple-boolean-table
 ```
 Or by cloning the repository:
 ```bash

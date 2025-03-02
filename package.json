@@ -1,5 +1,5 @@
 {
-  "name": "boolean-table",
+  "name": "simple-boolean-table",
   "module": "index.ts",
   "type": "module",
   "version": "0.1.0",
@@ -10,6 +10,9 @@
   "keywords": [
     "truth-table"
   ],
+  "bin": {
+    "boolean-table": "./index.ts"
+  },
   "scripts": {
     "boolean-table": "link:boolean-table"
   },
