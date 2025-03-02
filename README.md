@@ -7,8 +7,7 @@ With npm:
 ```bash
 npm i -g simple-boolean-table
 ```
-Or by cloning the repository:
-First, install [Bun](https://bun.sh/) and then run:
+Or by cloning the repository( but first install [Bun](https://bun.sh/) on your OS):
 ```bash
 git clone https://github.com/KiritoEM/boolean-table
 cd boolean-table
