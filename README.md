@@ -3,14 +3,12 @@
 A simple tool to generate a truth table from Boolean expressions.
 
 ## 📦 Installation
-
-First, install [Bun](https://bun.sh/) and then run:
-
 With npm:
 ```bash
 npm i -g simple-boolean-table
 ```
 Or by cloning the repository:
+First, install [Bun](https://bun.sh/) and then run:
 ```bash
 git clone https://github.com/KiritoEM/boolean-table
 cd boolean-table
