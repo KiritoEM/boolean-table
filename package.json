@@ -2,11 +2,16 @@
   "name": "simple-boolean-table",
   "module": "index.ts",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "KiritoEM",
   "description": "A simple Boolean Table Generator with basics operations",
-  "repository": "https://github.com/KiritoEM/boolean-table",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiritoEM/boolean-table"
+  },
+  "homepage": "https://github.com/KiritoEM/boolean-table",
+  "publisher": "KiritoEM",
   "keywords": [
     "truth-table"
   ],
