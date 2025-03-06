@@ -101,7 +101,7 @@ class BooleanTable implements IBooleanTable {
         ];
 
         let columnWidths = allExpressions.map((exp) => {
-            return Math.max(...table[exp].map(val => String(val).length), exp.length);
+            return exp.length;
         });
 
         let header = allExpressions.map((exp, idx) => {
