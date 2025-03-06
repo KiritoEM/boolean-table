@@ -19,8 +19,9 @@ bun install
 To start the tool, run:
 ```bash
 boolean-table
-
+```
 Or use the tool locally by linking the project:
+```bash
 bun link
 boolean-table
 ```
@@ -31,7 +32,7 @@ boolean-table
 - **test**: Run test unit
 ```bash
 bun run link #Link the project
-bun run test (testing) #Run tests
+bun run test  #Run tests
 ```
 
 ### ✅ Supported Expressions:
