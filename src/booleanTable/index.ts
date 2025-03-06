@@ -107,10 +107,6 @@ class BooleanTable implements IBooleanTable {
         let header = allExpressions.map((exp, idx) => {
             return exp.padEnd(columnWidths[idx]);
         })
-            .map((exp) => (
-                ["|", "&", "->", "==", "~"].some((op) => exp.includes(op)) && exp !== this.input ?
-                    `(${exp})` : exp
-            ))
             .join("    |    ");
 
         console.log(header);
