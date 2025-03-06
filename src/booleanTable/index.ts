@@ -63,6 +63,7 @@ class BooleanTable implements IBooleanTable {
                 }
             }
 
+            console.log("====================================== index " + i + " ======================================")
             //all subexpressions and expressions
             const result = this.evaluateAST.evaluateExpression(ast, this.table, i);
             this.table[this.input].push(result);
@@ -75,6 +76,7 @@ class BooleanTable implements IBooleanTable {
     fillSubexpressions(evaluations: Map<TreeNode, BinaryType>) {
         evaluations.forEach((value, key, callback) => {
             const subexpression = this.evaluateAST.treeToExpression(key);
+            console.log(`expression: ${subexpression} ||| value: ${value}`)
 
             //verify if input
             if (subexpression.match(WORD_WITHOUT_PARENTHENSES)?.[0] === this.input.match(WORD_WITHOUT_PARENTHENSES)?.[0]) {
@@ -84,11 +86,11 @@ class BooleanTable implements IBooleanTable {
             if (!this.table[subexpression]) {
                 this.table[subexpression] = [];
             }
-            else {
+
+            if (typeof subexpression !== undefined) {
                 this.table[subexpression].push(value);
             }
         })
-
     }
 
     printTable(table: hashTableRecord<string>, propositions: string[]): void {
@@ -97,20 +99,29 @@ class BooleanTable implements IBooleanTable {
         console.log(`Table boolean for : ${chalk.green(`"${this.input}"`)}`);
         console.log()
 
-        //print table
         const allExpressions = [...propositions,
-        ...(this.step ? Object.keys(table).filter((exp) => !propositions.includes(exp) && exp !== this.input) : []),
-        this.input
+            ...(this.step ? Object.keys(table).filter((exp) => !propositions.includes(exp) && exp !== this.input) : []),
+            this.input
         ];
-        let header = allExpressions.join('   |   ');
-
+        
+        let columnWidths = allExpressions.map((exp) => {
+            return Math.max(...table[exp].map(val => String(val).length), exp.length);
+        });
+        
+        let header = allExpressions.map((exp, idx) => {
+            return exp.padEnd(columnWidths[idx]);
+        }).join("    |    ");
+        
         console.log(header);
         console.log("-".repeat(header.length));
-
+        
         for (let i = 0; i < table[propositions[0]].length; i++) {
-            let row = allExpressions.map((exp) => table[exp][i]);
-            console.log(row.join('   |   '));
-        };
+            let row = allExpressions.map((exp, idx) => {
+                return String(table[exp][i]).padEnd(columnWidths[idx]);
+            }).join("    |    ");
+            console.log(row);
+        }
+        
     }
 }
 
