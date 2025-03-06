@@ -77,7 +77,6 @@ class BooleanTable implements IBooleanTable {
 
             //verify if input
             if (subexpression.match(WORD_WITHOUT_PARENTHENSES)?.join("") === this.input.match(WORD_WITHOUT_PARENTHENSES)?.join("")) {
-                console.log(`Evaluating subexpression exlus: ${subexpression}`);
                 return;
             }
 
@@ -107,7 +106,12 @@ class BooleanTable implements IBooleanTable {
 
         let header = allExpressions.map((exp, idx) => {
             return exp.padEnd(columnWidths[idx]);
-        }).join("    |    ");
+        })
+            .map((exp) => (
+                ["|", "&", "->", "==", "~"].some((op) => exp.includes(op)) && exp !== this.input ?
+                    `(${exp})` : exp
+            ))
+            .join("    |    ");
 
         console.log(header);
         console.log("-".repeat(header.length));

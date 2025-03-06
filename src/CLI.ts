@@ -48,7 +48,7 @@ const displayHelp = () => {
 
 Commands:
   expression <expression>          Generates the truth table for the given expression 
-  expression <expression> --step   Generates the truth table with step-by-step subexpressions
+  expression <expression> --step   Generates the truth table by printing subexpressions
   help                             Display this help screen
 
 Expressions:

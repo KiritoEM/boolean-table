@@ -45,7 +45,7 @@ bun run test  #Run tests
 
 ### 🔧 Commands:
 - **expression `<expression>`** : Generates the truth table for the given expression.
-- **expression `<expression> --step`** : Generates the truth table with step-by-step subexpressions
+- **expression `<expression> --step`** : Generates the truth table by printing subexpressions
 - **help** : Displays the help screen.
 
 ## 📌 Example Usage
@@ -59,16 +59,17 @@ boolean-table expression "(a -> ~b) == (b | a)"
 | 0 | 1 | 1                    |
 | 1 | 0 | 1                    |
 | 1 | 1 | 0                    |
+```
 
-OR With step:
+Or by printing subexpressions:
 
 boolean-table expression "(a -> ~b) == (b | a)" --step
-
-# Truth table for (a -> ~b) == (b | a) with steps
-| a  | b  | ~b  | (b | a)| (a -> ~b) == (b | a) |
-|----|----|-----|----|---|---------------------|
-| 0  | 0  | 1   | 0  | 0 | 0                   |
-| 0  | 1  | 0   | 1  | 1 | 1                   |
-| 1  | 0  | 1   | 1  | 1 | 1                   |
-| 1  | 1  | 0   | 1  | 1 | 0                   |
+```bash
+# Truth table for (a -> ~b) == (b | a) by printing subexpressions
+ | a    | b    | ~b    | (a -> ~b) | (b | a) | (a -> ~b) == (b | a) |
+ |------|------|-------|-----------|----|----|----------------------|
+ | 0    | 0    | 1     | 1         | 0  | 0  | 0                    |
+ | 0    | 1    | 0     | 1         | 1  | 1  | 1                    |
+ | 1    | 0    | 1     | 1         | 1  | 1  | 1                    |
+ | 1    | 1    | 0     | 0         | 1  | 0  | 0                    |
 ```
