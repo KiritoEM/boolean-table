@@ -5,7 +5,7 @@ import Proposition from "../proposition";
 import type { TreeNode } from "../parser/types";
 import Evaluate from "../evaluate";
 import chalk from "chalk";
-import { numberToBinary, WORD, WORD_WITHOUT_PARENTHENSES } from "../utils";
+import { numberToBinary, WORD_WITHOUT_PARENTHENSES } from "../utils";
 
 class BooleanTable implements IBooleanTable {
     private tokenizer = new Tokenizer();
