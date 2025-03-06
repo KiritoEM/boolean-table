@@ -65,7 +65,7 @@ OR With step:
 boolean-table expression "(a -> ~b) == (b | a)" --step
 
 # Truth table for (a -> ~b) == (b | a) with steps
-| a  | b  | ~b  | b | a | (a -> ~b) == (b | a) |
+| a  | b  | ~b  | (b | a)| (a -> ~b) == (b | a) |
 |----|----|-----|----|---|---------------------|
 | 0  | 0  | 1   | 0  | 0 | 0                   |
 | 0  | 1  | 0   | 1  | 1 | 1                   |
