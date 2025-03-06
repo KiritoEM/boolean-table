@@ -76,7 +76,8 @@ class BooleanTable implements IBooleanTable {
             const subexpression = this.evaluateAST.treeToExpression(key);
 
             //verify if input
-            if (subexpression.match(WORD_WITHOUT_PARENTHENSES)?.[0] === this.input.match(WORD_WITHOUT_PARENTHENSES)?.[0]) {
+            if (subexpression.match(WORD_WITHOUT_PARENTHENSES)?.join("") === this.input.match(WORD_WITHOUT_PARENTHENSES)?.join("")) {
+                console.log(`Evaluating subexpression exlus: ${subexpression}`);
                 return;
             }
 
