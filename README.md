@@ -19,6 +19,19 @@ bun install
 To start the tool, run:
 ```bash
 boolean-table
+
+Or use the tool locally by linking the project:
+bun link
+boolean-table
+```
+
+
+## 🚀 Scripts
+- **link** : Link the project
+- **test**: Run test unit
+```bash
+bun run link #Link the project
+bun run test (testing) #Run tests
 ```
 
 ### ✅ Supported Expressions:
@@ -31,6 +44,7 @@ boolean-table
 
 ### 🔧 Commands:
 - **expression `<expression>`** : Generates the truth table for the given expression.
+- **expression `<expression> --step`** : Generates the truth table with step-by-step subexpressions
 - **help** : Displays the help screen.
 
 ## 📌 Example Usage

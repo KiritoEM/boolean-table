@@ -19,7 +19,7 @@
     "boolean-table": "./index.ts"
   },
   "scripts": {
-    "boolean-table": "link:boolean-table",
+    "link": "link:boolean-table",
     "test": "jest"
   },
   "devDependencies": {

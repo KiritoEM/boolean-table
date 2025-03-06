@@ -47,8 +47,8 @@ const displayHelp = () => {
     console.log(`Usage: boolean-table [command] [expression] [options]
 
 Commands:
-  expression <expression>          Print the boolean table for the given expression 
-  expression <expression> --step   Print the boolean table with step-by-step subexpressions
+  expression <expression>          Generates the truth table for the given expression 
+  expression <expression> --step   Generates the truth table with step-by-step subexpressions
   help                             Display this help screen
 
 Expressions:
